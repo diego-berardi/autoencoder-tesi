@@ -4,7 +4,7 @@ data:
   categorical_cols: [ ]
   index_col: "date"
   target_col: [ "pressure" ]
-  data_path: "../data/autoencoder-1s-20kHz.csv"
+  data_path: "../data/autoencoder-6s-50kHz.csv"
   prediction_window: 1
   seq_length: 3
   task:

@@ -23,7 +23,8 @@ def evaluate(test_iter, criterion, model, config, ts):
     eval_loss = 0.0
 
     model.eval()
-    for i, batch in tqdm(enumerate(test_iter), total=len(test_iter), desc="Evaluating"):
+    # for i, batch in tqdm(enumerate(test_iter), total=len(test_iter), desc="Evaluating"):
+    for i, batch in enumerate(test_iter):  # Remove tqdm wrapper
         with torch.no_grad():
             feature, y_hist, target = batch
             output, att = model(feature.to(device), y_hist.to(device), return_attention=True)

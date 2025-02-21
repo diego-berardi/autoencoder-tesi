@@ -31,8 +31,10 @@ def train(train_iter, test_iter, model, criterion, optimizer, config, ts):
 
     global_step, logging_loss = 0, 0.0
     train_loss = 0.0
-    for epoch in tqdm(range(config.training.num_epochs), unit="epoch"):
-        for i, batch in tqdm(enumerate(train_iter), total=len(train_iter), unit="batch"):
+    for epoch in range(config.training.num_epochs):  # removed tqdm
+    # for epoch in tqdm(range(config.training.num_epochs), unit="epoch"):
+        for i, batch in enumerate(train_iter):  # removed tqdm
+        # for i, batch in tqdm(enumerate(train_iter), total=len(train_iter), unit="batch"):
             model.train()
             optimizer.zero_grad()
 
