@@ -47,9 +47,9 @@ def evaluate(test_iter, criterion, model, config, ts):
     if config.general.do_eval:
         preds, targets = ts.invert_scale(predictions), ts.invert_scale(targets)
 
-        plt.figure()
-        plt.plot(preds, linewidth=.3)
-        plt.plot(targets, linewidth=.3)
+        plt.figure(1000,10)
+        plt.plot(preds, linewidth=.1)
+        plt.plot(targets, linewidth=.1)
         plt.savefig("{}/preds.png".format(config.general.output_dir))
         plt.close()
 
